@@ -1,36 +1,46 @@
 :root {
     --prefixbox-primary: #1abc9c;
+    --hover-color: #ffffff22;
+    --shadow: lightgray;
+    --old-price: #777;
+    --sale-price: #f00;
 }
-*{
+
+* {
     box-sizing: border-box;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
-.search-form{
-    display:flex;
+
+.search-form {
+    display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin:30px 0 0 30px;
+    margin: 30px 0 0 30px;
 }
-.search-title{
+
+.search-title {
     font-family: 'Arial';
     display: flex;
     align-items: flex-start;
 }
-.search-input{
-    width:500px;
-    margin-left:15px;
-    position:relative;
-}
-input#keyword{
+
+.search-input {
+    width: 500px;
+    margin-left: 15px;
     position: relative;
-    width:100%;
-    padding:8px 15px;
-    font-size:15px;
-    border-radius: 25px;
-    border:2px solid var(--prefixbox-primary);
 }
-input#keyword:focus{
+
+input#keyword {
+    position: relative;
+    width: 100%;
+    padding: 8px 15px;
+    font-size: 15px;
+    border-radius: 25px;
+    border: 2px solid var(--prefixbox-primary);
+}
+
+input#keyword:focus {
     outline: none;
 }
 
@@ -47,75 +57,129 @@ input#keyword:focus{
     position: absolute;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
-    top:44px;
-}   
-   .prefixbox-autocomplete-container.open {
-        display: flex;
-        flex-direction:row;
-        align-items:flex-start;
-        justify-content: flex-start;
-    }
+    top: 44px;
+    border: 2px solid var(--prefixbox-primary);
+    border-radius: 25px;
+    box-shadow: var(--shadow) 0px 5px 5px 5px;
+}
+
+.prefixbox-autocomplete-container.open {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 
 .prefixbox-autocomplete-container .col-1 {
     width: 50%;
+    background: var(--prefixbox-primary);
+    box-sizing: border-box;
+    padding: 12px;
+    border: 2px solid var(--prefixbox-primary);
+    border-radius: 25px 0px 0px 25px;
 }
+
 .prefixbox-autocomplete-container .col-2 {
     width: 50%;
-    background:#fff;
+    background: #fff;
 }
+
+.prefixbox-group-container.group-id-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container {
-    color: #000;
+    color: #fff;
     font-size: 14px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 1px solid var(--hover-color);
 }
-.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container:hover{
-    background-color: gray;
+
+.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container b {
+    font-weight: normal !important;
 }
+
+.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container:hover {
+    background-color: var(--hover-color);
+    border-radius: 25px;
+    transition: 0.25s;
+    text-indent: 12px;
+    border: none;
+}
+
 .prefixbox-group-2-title.pfbx-group-title {
     display: none;
 }
+
 .prefixbox-autocomplete-product-container {
-    width:100%;
+    width: 100%;
     padding: 5px;
 }
-.prefixbox-autocomplete-product{
+
+.prefixbox-autocomplete-product {
     padding: 10px;
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
+
 .prefixbox-autocomplete-left {
     width: 33%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .prefixbox-autocomplete-left img {
     max-width: 80px;
     max-height: 80px;
 }
+
 .prefixbox-autocomplete-body {
     width: 52%;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
+
 .prefixbox-autocomplete-right {
     width: 15%;
     font-size: 12px;
+    text-align: center;
 }
-.prefixbox-autocomplete-right span{
+
+.prefixbox-autocomplete-right span {
     font-weight: 700;
 }
 
+.prefixbox-regular-price {
+    color: var(--prefixbox-primary);
+}
 
-@media (max-width: 500px){
-    .search-form{
-        margin:0;
-        padding:15px;
+.prefixbox-sale-price {
+    color: var(--sale-price);
+}
+
+.prefixbox-old-price {
+    color: var(--old-price);
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+
+@media (max-width: 500px) {
+    .search-form {
+        margin: 0;
+        padding: 15px;
     }
-    .search-title{
+
+    .search-title {
         display: none;
     }
-    .search-input{
-        margin:0;
+
+    .search-input {
+        margin: 0;
     }
 
 }
