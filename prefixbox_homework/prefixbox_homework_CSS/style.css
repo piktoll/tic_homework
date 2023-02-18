@@ -4,6 +4,7 @@
     --shadow: lightgray;
     --old-price: #777;
     --sale-price: #f00;
+    --transparent: #00000000;
 
     --transition-time: 0.3s;
 }
@@ -55,8 +56,7 @@ input#keyword:focus {
 .prefixbox-autocomplete-container {
     margin: 0;
     display: flex;
-    background-color: var(--prefixbox-primary);
-    border: 1px solid #000;
+    background-color: #fff;
     box-sizing: border-box;
     z-index: 62;
     text-align: left;
@@ -64,6 +64,7 @@ input#keyword:focus {
     font-family: 'Montserrat', sans-serif;
     width: 150%;
     height: 450px;
+    padding: 12px;
     top: 44px;
     border: 2px solid var(--prefixbox-primary);
     border-radius: 25px;
@@ -83,23 +84,29 @@ input#keyword:focus {
     box-sizing: border-box;
     padding: 12px;
     border: 2px solid var(--prefixbox-primary);
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 20px 0px 0px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 
 .prefixbox-autocomplete-container .col-2 {
-    width: 67%;
-    background: #fff;
-    border-radius: 0px 25px 25px 0px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
     overflow-y: scroll;
 }
 
 .prefixbox-group-container.group-id-2 {
+    margin-right: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container {
-    border-top: 1px solid transparent;
+    border-top: 1px solid var(--transparent);
 }
 
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container~.prefixbox-autocomplete-keyword-container {
@@ -122,11 +129,11 @@ input#keyword:focus {
     border-radius: 25px;
     transition: var(--transition-time);
     text-indent: 12px;
-    border: 1px solid transparent;
+    border: 1px solid var(--transparent);
 }
 
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container:hover+div {
-    border-top: 1px solid transparent;
+    border-top: 1px solid var(--transparent);
 }
 
 .prefixbox-group-2-title.pfbx-group-title {
@@ -136,25 +143,22 @@ input#keyword:focus {
 .prefixbox-autocomplete-product-container {
     width: 100%;
     padding: 12px;
+    border: 2px solid var(--transparent);
+    border-radius: 25px;
 }
 
 .prefixbox-autocomplete-product-container:hover {
     color: var(--prefixbox-primary);
+    border-color: var(--prefixbox-primary);
+    box-shadow: var(--shadow) 0px 0px 5px 2px;
+    transition: var(--transition-time);
 }
 
 .prefixbox-autocomplete-product {
     padding: 10px;
-    border: 2px solid transparent;
-    border-radius: 25px;
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.prefixbox-autocomplete-product:hover {
-    border-color: var(--prefixbox-primary);
-    box-shadow: var(--shadow) 0px 0px 5px 2px;
-    transition: var(--transition-time);
 }
 
 .prefixbox-autocomplete-left {
@@ -201,6 +205,22 @@ input#keyword:focus {
     color: var(--old-price);
     font-size: 10px;
     text-decoration: line-through;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    margin-right: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--shadow);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--prefixbox-primary);
+    border-radius: 4px;
 }
 
 
