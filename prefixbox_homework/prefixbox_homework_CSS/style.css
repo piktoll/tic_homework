@@ -201,21 +201,6 @@ input#keyword:focus {
     text-decoration: line-through;
 }
 
-/* Custom Scrollbar for col-1
-.prefixbox-autocomplete-container .col-1::-webkit-scrollbar {
-    width: 8px;
-}
-
-.prefixbox-autocomplete-container .col-1::-webkit-scrollbar-track {
-    background: var(--shadow);
-    border-radius: 10px;
-}
-
-.prefixbox-autocomplete-container .col-1::-webkit-scrollbar-thumb {
-    background: #fff;
-    border-radius: 4px;
-}
-*/
 /* Custom Scrollbar for col-2 */
 .prefixbox-autocomplete-container .col-2::-webkit-scrollbar {
     width: 8px;
