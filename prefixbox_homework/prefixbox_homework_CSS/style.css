@@ -14,6 +14,10 @@
     margin: 0;
 }
 
+span>b {
+    font-weight: normal;
+}
+
 .search-form {
     display: flex;
     align-items: center;
@@ -58,11 +62,12 @@ input#keyword:focus {
     text-align: left;
     position: absolute;
     font-family: 'Montserrat', sans-serif;
-    width: 100%;
+    width: 150%;
+    height: 450px;
     top: 44px;
     border: 2px solid var(--prefixbox-primary);
     border-radius: 25px;
-    box-shadow: var(--shadow) 0px 5px 5px 5px;
+    box-shadow: var(--shadow) 0px 0px 5px 3px;
 }
 
 .prefixbox-autocomplete-container.open {
@@ -73,7 +78,7 @@ input#keyword:focus {
 }
 
 .prefixbox-autocomplete-container .col-1 {
-    width: 50%;
+    width: 33%;
     background: var(--prefixbox-primary);
     box-sizing: border-box;
     padding: 12px;
@@ -82,9 +87,10 @@ input#keyword:focus {
 }
 
 .prefixbox-autocomplete-container .col-2 {
-    width: 50%;
+    width: 67%;
     background: #fff;
     border-radius: 0px 25px 25px 0px;
+    overflow-y: scroll;
 }
 
 .prefixbox-group-container.group-id-2 {
@@ -100,6 +106,10 @@ input#keyword:focus {
     border-top: 1px solid var(--hover-color);
 }
 
+.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container:last-child {
+    border-bottom: 1px solid var(--hover-color);
+}
+
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container {
     color: #fff;
     font-size: 14px;
@@ -112,15 +122,11 @@ input#keyword:focus {
     border-radius: 25px;
     transition: var(--transition-time);
     text-indent: 12px;
-    border: none;
+    border: 1px solid transparent;
 }
 
 .prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container:hover+div {
-    border: none;
-}
-
-.prefixbox-autocomplete-container .prefixbox-autocomplete-keyword-container b {
-    font-weight: normal !important;
+    border-top: 1px solid transparent;
 }
 
 .prefixbox-group-2-title.pfbx-group-title {
@@ -130,6 +136,10 @@ input#keyword:focus {
 .prefixbox-autocomplete-product-container {
     width: 100%;
     padding: 12px;
+}
+
+.prefixbox-autocomplete-product-container:hover {
+    color: var(--prefixbox-primary);
 }
 
 .prefixbox-autocomplete-product {
